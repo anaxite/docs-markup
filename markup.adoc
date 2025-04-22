@@ -1,0 +1,270 @@
+= Text markup format comparisons
+
+[cols="1,3a,3a,3a"]
+|===
+|Feature |Markdown syntax |AsciiDoc syntax |HTML result
+
+|Headings |
+....
+# Heading level 1
+## Heading level 2
+### Heading level 3
+#### Heading level 4
+##### Heading level 5
+###### Heading level 6
+....
+|
+....
+= Document Title
+== Level 1 Section Title
+=== Level 2 Section Title
+==== Level 3 Section Title
+===== Level 4 Section Title
+====== Level 5 Section Title
+....
+|
+....
+<h1>Heading level 1</h1>
+<h2>Heading level 2</h2>
+<h3>Heading level 3</h3>
+<h4>Heading level 4</h4>
+<h5>Heading level 5</h5>
+<h6>Heading level 6</h6>
+....
+
+|Paragraphs |
+....
+This is a line.
+
+This is another line.
+....
+|
+....
+This is a line.
+
+This is another line.
+....
+|
+....
+<p>This is a line.</p>
+
+<p>This is another line.</p>
+....
+
+|Line breaks |
+....
+This is the first line.  
+And this is the second line. 
+....
+
+....
+This is the first line. \
+And this is the second line. 
+....
+|
+....
+This is the first line. +
+And this is the second line. 
+....
+
+....
+[%hardbreaks]
+This is the first line.
+And this is the second line. 
+....
+|
+....
+<p>This is the first line.<br>
+And this is the second line.</p>
+....
+
+|Emphasis: bold |
+....
+I just love **bold text**.
+I just love __bold text__.
+Love**is**bold
+....
+|
+....
+
+....
+|
+....
+I just love <strong>bold text</strong>.
+I just love <strong>bold text</strong>.
+Love<strong>is</strong>bold
+....
+
+|Emphasis: italics |
+....
+Italicized text is the *cat's meow*.
+Italicized text is the _cat's meow_.
+A*cat*meow
+....
+|
+....
+
+....
+|
+....
+Italicized text is the <em>cat's meow</em>.
+Italicized text is the <em>cat's meow</em>.
+A<em>cat</em>meow
+....
+
+|Emphasis: bold+italics |
+....
+This text is ***really important***.
+This text is ___really important___.
+This text is __*really important*__.
+This text is **_really important_**.
+This is really***very***important text.
+....
+|
+....
+
+....
+|
+....
+This text is <em><strong>really important</strong></em>.
+This text is <em><strong>really important</strong></em>.
+This text is <em><strong>really important</strong></em>.
+This text is <em><strong>really important</strong></em>.
+This is really<em><strong>very</strong></em>important text.
+....
+
+|Blockquotes |
+....
+> Dorothy followed her through many of the beautiful rooms in her castle.
+....
+|
+|
+....
+<blockquote>
+    Dorothy followed her through many of the beautiful rooms in her castle.
+</blockquote>
+....
+
+|Lists: ordered lists, single level |
+....
+1. First item
+2. Second item
+3. Third item
+4. Fourth item 
+....
+
+....
+1. First item
+1. Second item
+1. Third item
+1. Fourth item 
+....
+
+....
+1. First item
+8. Second item
+3. Third item
+5. Fourth item 
+....
+|
+....
+....
+|
+....
+<ol>
+  <li>First item</li>
+  <li>Second item</li>
+  <li>Third item</li>
+  <li>Fourth item</li>
+</ol> 
+....
+
+|Lists: ordered lists, nested |
+....
+1. First item
+2. Second item
+3. Third item
+    1. Indented item
+    2. Indented item
+4. Fourth item 
+....
+|
+....
+....
+|
+....
+<ol>
+  <li>First item</li>
+  <li>Second item</li>
+  <li>Third item
+    <ol>
+      <li>Indented item</li>
+      <li>Indented item</li>
+    </ol>
+  </li>
+  <li>Fourth item</li>
+</ol> 
+....
+
+|Lists: unordered lists, single level |
+....
+- First item
+- Second item
+- Third item
+- Fourth item
+....
+
+....
+* First item
+* Second item
+* Third item
+* Fourth item 
+....
+
+....
++ First item
++ Second item
++ Third item
++ Fourth item 
+....
+|
+....
+....
+|
+....
+<ul>
+  <li>First item</li>
+  <li>Second item</li>
+  <li>Third item</li>
+  <li>Fourth item</li>
+</ul>
+....
+
+|Lists: unordered lists, nested |
+....
+- First item
+- Second item
+- Third item
+    - Indented item
+    - Indented item
+- Fourth item 
+....
+|
+....
+....
+|
+....
+<ul>
+  <li>First item</li>
+  <li>Second item</li>
+  <li>Third item
+    <ul>
+      <li>Indented item</li>
+      <li>Indented item</li>
+    </ul>
+  </li>
+  <li>Fourth item</li>
+</ul> 
+....
+
+|===
